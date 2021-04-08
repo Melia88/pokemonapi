@@ -6,19 +6,19 @@ export default class Pokemon{
     this.name = name
     this.weight = weight
     this.height = height
-    this.types = types
+    this.types = types[0].type.name
     this.img = img || sprites.other.dream_world.front_default
   }
 
   get Template(){
     return /*html*/`
     
-       <div class="card">
+       <div class="card shadow text-center">
       
         <img class="img-fluid" src="${this.img}" alt=""/>
           <h1>${this.name}</h1>
-          <h3>${this.weight} | ${this.height}</h3>
-          <h4>${this.types}</h4>
+          <h3>Weight: ${this.weight} | Height: ${this.height}</h3>
+          <h4>Type: ${this.types}</h4>
           <button class="btn btn-success" onclick="app.PokemonApiController.catchPokemon(${this.pokemon})">Catch Pokemon</button>
         </div>
      

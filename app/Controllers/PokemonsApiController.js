@@ -4,7 +4,7 @@ import {pokemonApiService} from "../Services/PokemonsApiService.js"
 function _drawAllPokemon(){
  let template = ''
  ProxyState.apiPokemon.forEach(p => {
-   template += `<li class="action hover-action" onclick="app.pokemonApiController.getPokemon('${p.name}')">${p.name}</li>`
+   template += `<li class="cursor" onclick="app.pokemonApiController.getPokemon('${p.name}')">${p.name}</li>`
  })
 
   document.getElementById('api-pokemon').innerHTML = template
